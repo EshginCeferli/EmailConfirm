@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Product>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-4 col-12">
+        <div class="product-card">
+            <div class="img">
+                <img src="~/assets/images/home/@item.ProductImage" alt="" />
+
+                <div class="price">$@item.Price</div>
+            </div>
+            <div class="title">
+                <form asp-controller="Accessories" asp-action="AddBasket" asp-route-id="@item.Id" method="post" class="basketForm">
+                    <button type="submit" style="border:none">
+                        <div class="cart">
+                            <i class="fa-solid fa-cart-shopping">
+                            
+                            </i>
+                        </div>
+                    </button>
+                      
+                    
+                </form>
+                
+               
+                <h6>@item.Name</h6>
+                <ul>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                </ul>
+            </div>
+            <div class="icons">
+                <div class="heart">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="eye">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+}

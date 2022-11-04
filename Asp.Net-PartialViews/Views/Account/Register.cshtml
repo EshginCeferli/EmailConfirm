@@ -1,0 +1,69 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<main>
+    <section id="register">
+        <div class="container-fluid">
+            <div class="register-area">
+                <div class="image"></div>
+                <form method="post" asp-controller="Account" asp-action="Register" enctype="multipart/form-data" style="width:50%">
+                    <div class="register w-100">
+                        <div class="text-danger" asp-validation-summary="All"> </div>
+                        <h4>Enter your details</h4>
+                        <div></div>
+                        <label asp-for="Fullname">
+                            <input placeholder="Fullname " asp-for="Fullname" />
+                            <span class="text-danger" asp-validation-for="Fullname"></span>
+
+                        </label>
+
+                        <label asp-for="Username">
+                            <input placeholder="Username" asp-for="Username" />
+                   
+                            <span class="text-danger" asp-validation-for="Username"></span>
+                        </label>
+                     
+
+                        <label asp-for="Email">
+                            <input placeholder="Email " asp-for="Email" />
+                       
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </label>
+
+                        <label asp-for="Password">
+                            <input placeholder="Password " asp-for="Password" />
+                          
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </label>
+
+                        <label asp-for="ConfirmPassword">
+                            <input placeholder="Confirm Password " asp-for="ConfirmPassword" />
+                         
+                            <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                        </label>
+
+                        <button type="submit" class="my-5" >Sign Up</button>
+
+                        <p style="margin-top: 24px">
+                            Already have an account? <a href="">Sign in</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main>
+@section css{
+    <link rel="stylesheet" href="~/assets/css/signup/signup.css" />
+}
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}
+

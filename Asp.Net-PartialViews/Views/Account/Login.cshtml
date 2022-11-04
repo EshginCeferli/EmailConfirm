@@ -1,0 +1,50 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<main>
+    <section id="register">
+        <div class="container-fluid">
+            <div class="register-area">
+                <div class="image"></div>
+                <form method="post" asp-controller="Account" asp-action="Login" enctype="multipart/form-data" style="width:50%">
+                    <div class="register w-100">
+                        <div class="text-danger" asp-validation-summary="All"> </div>
+                        <h4>Enter your details</h4>
+                        <div></div>
+                        <label asp-for="EmailOrUsername">
+                            <input placeholder="Email or Password " asp-for="EmailOrUsername" />
+                            <span class="text-danger" asp-validation-for="EmailOrUsername"></span>
+
+                        </label>
+
+
+
+                        <label asp-for="Password">
+                            <input placeholder=" Password" asp-for="Password" />
+
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </label>
+
+
+                        <button type="submit" class="my-5">Sign In</button>
+
+                      
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main>
+@section css{
+    <link rel="stylesheet" href="~/assets/css/signup/signup.css" />
+}
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}

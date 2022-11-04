@@ -1,0 +1,178 @@
+﻿@model AccessoriesVM
+@{
+    ViewData["Title"] = "Accessories Page";
+}
+
+<main>
+    <section id="product-list">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="row">
+                        <div class="product-filter">
+                            <div class="search">
+                                <input type="text" placeholder="Search products..." />
+                            </div>
+
+                            <div class="brand">
+                                <h6><b>Brands</b></h6>
+                                <input type="text" placeholder="Search products..." /><br />
+                                <input type="checkbox" />
+                                <label>Insignis </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>Samsung </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>HP </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>Metris </label><span class="count">4</span><br />
+                            </div>
+
+                            <div class="type">
+                                <h6><b>Type</b></h6>
+
+                                <input type="checkbox" placeholder="Search products..." />
+                                <label>Trend cases </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>ULt protection cases </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>Ink cartridges </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>Business cases </label><span class="count">4</span><br />
+                            </div>
+
+                            <div class="category">
+                                <h6><b>Category</b></h6>
+                                <input type="text" placeholder="Search products..." /><br />
+                                <input type="checkbox" />
+                                <label>Appliances </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>Computers & Tablets </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>Cell Phones </label><span class="count">4</span><br />
+
+                                <input type="checkbox" />
+                                <label>Audio </label><span class="count">4</span><br />
+                            </div>
+
+                            <div class="price">
+                                <h6><b>Price</b></h6>
+
+                                <input type="radio" name="price" />
+                                <label>Below $10 </label><br />
+
+                                <input type="radio" name="price" />
+                                <label>$10 - $100 </label><br />
+
+                                <input type="radio" name="price" />
+                                <label>$100 -$500 </label><br />
+
+                                <input type="radio" name="price" />
+                                <label>Above $500 </label><br />
+                                <h6><b>Enter Price Range</b></h6>
+                                <input type="number" placeholder="1" />
+
+                                <input type="number" placeholder="$500" />
+                                <button><a href="">Go</a></button>
+                            </div>
+
+                            <div class="rating">
+                                <h6><b>Rating Menu</b></h6>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span><span class="count">4</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span><span class="count">4</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span><span class="count">4</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span><span class="count">4</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span><span class="count">4</span>
+                                </li>
+                            </div>
+
+                            <div class="clear">
+                                <button>
+                                    <a href="">Clear all filters</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-9">
+                    <div class="row">
+                        <div class="selection">
+                            <select name="price" id="select-price" class="price">
+                                <option value="">Featured</option>
+                                <option value="dog">Lowest prices</option>
+                                <option value="cat">Highest prices</option>
+                            </select>
+                            <span>18,046 results found in 10ms</span>
+                        </div>
+                    </div>
+
+                    <div class="product-cards">
+                        <input type="hidden" id="product-count" value="@ViewBag.count" />
+                        <div class="row" id="parent-products">
+                            <partial name="_ProductsPartial" model="@Model.Products" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="show-more d-flex justify-content-center my-2 mb-2 w-100">
+                        <button class="btn btn-primary">Show more ...</button>
+                    </div>
+                    <div class="row">
+                        <div class="pagination">
+                            <a href="#" class="blocks">&laquo;</a>
+                            <a href="#" class="blocks active">1</a>
+                            <a href="#" class="blocks">2</a>
+                            <a href="#" class="blocks">3</a>
+                            <a href="#" class="blocks">4</a>
+                            <a href="#" class="blocks">5</a>
+
+                            <a href="#" class="blocks">&raquo;</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    @RenderSection("scripts", required: false)
+</main>
